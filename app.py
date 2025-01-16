@@ -24,7 +24,7 @@ def index():
             translation = data['responseData']['translatedText']
         except Exception as e:
             translation = f"Unexpected error occured: {str(e)}"
-    return render_template('index.html')
+    return render_template('index.html', translation=translation)
 
 if __name__ == "__main__":
     app.run(debug=True)
