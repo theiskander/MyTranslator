@@ -4,7 +4,7 @@ const targetLang = document.getElementById('target_lang');
 function updateOptions() {
     const selectedSource = sourceLang.value;
     const selectedTarget = targetLang.value;
-    
+
     // Updating target language
     Array.from(targetLang.options).forEach(option => {
         option.style.display = option.value === selectedSource ? 'none' : 'block';
@@ -27,3 +27,20 @@ targetLang.addEventListener('change', updateOptions);
 
 // Initialize the state when the page is loaded
 window.addEventListener('DOMContentLoaded', updateOptions);
+
+// Buttons
+// Delete input field
+document.getElementById('del-input-field')?.addEventListener('click', () => {
+    const translation = document.getElementById('input');
+    if (translation) {
+        translation.value = '';
+    }
+});
+
+// Delete translation field
+document.getElementById('del-translation-field')?.addEventListener('click', () => {
+    const translation = document.getElementById('translation');
+    if (translation) {
+        translation.value = '';
+    }
+});
