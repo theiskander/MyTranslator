@@ -54,3 +54,16 @@ document.getElementById('copy-btn')?.addEventListener('click', () => {
         alert('Text copied to clipboard!');
     }
 });
+
+//Insert
+document.getElementById('insert')?.addEventListener('click', async () => {
+    try {
+        const clipboardText = await navigator.clipboard.readText(); 
+        const inputField = document.getElementById('input');
+        if (inputField) {
+            inputField.value = clipboardText; 
+        }
+    } catch (err) {
+        console.error('Failed to read clipboard contents: ', err);
+    }
+});
