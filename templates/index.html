@@ -12,9 +12,18 @@
     <div class="container">
         <h1 class="mb-4">My Translator</h1>
         <form method="POST">
-            <div class="mb-3">
-                <label for="text" class="form-label"><strong>Enter text to translate:</strong></label>
-                <textarea id="text" name="text" class="form-control" placeholder="Type something..." rows="3" required></textarea>
+            <div class="row g-3 align-items-start mt-4">
+                <!-- Input field -->
+                <label for="input" class="form-label"><strong>Enter text to translate:</strong></label>
+                <div class="col-11">
+                    <textarea id="text" name="text" class="form-control" placeholder="Type something..." rows="3" required></textarea>
+                </div>
+                
+                <!-- Buttons field -->
+                <div class="col-1 d-flex flex-column justify-content-start">
+                    <button type="button" class="btn btn-primary mb-2">Insert</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
             </div>
             <div class="row g-3 mb-3">
                 <div class="col">
@@ -40,11 +49,21 @@
         </form>
 
         {% if translation %}
-        <div class="mt-4">
-            <label for="text" class="form-label"><strong>Translation</strong></label>
-            <textarea class="form-control" rows="3" readonly>{{ translation }}</textarea>
-        </div>
+        <div class="row g-3 align-items-start mt-4">
+            <!-- Translation field -->
+            <label for="translation" class="form-label"><strong>Translation</strong></label>
+            <div class="col-11">
+                <textarea id="translation" class="form-control" rows="3" readonly>{{ translation }}</textarea>
+            </div>
+            
+            <!-- Buttons field -->
+            <div class="col-1 d-flex flex-column justify-content-start">
+                <button type="button" class="btn btn-primary mb-2">Copy</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>      
+        </div>   
         {% endif %}
+        
     </div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
