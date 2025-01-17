@@ -44,3 +44,13 @@ document.getElementById('del-translation-field')?.addEventListener('click', () =
         translation.value = '';
     }
 });
+
+// Copy
+document.getElementById('copy-btn')?.addEventListener('click', () => {
+    const translation = document.getElementById('translation');
+    if (translation) {
+        translation.select();
+        document.execCommand('copy');
+        alert('Text copied to clipboard!');
+    }
+});
