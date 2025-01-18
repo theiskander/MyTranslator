@@ -24,18 +24,39 @@
                     <button id="insert" type="button" class="btn btn-primary mb-2">Insert</button>
                     <button id="del-input-field" type="button" class="btn btn-danger">Delete</button>
                 </div>
-            </div>
+            </div><br/>
+
+            <!-- Labels -->
             <div class="row g-3 mb-3">
                 <div class="col">
                     <label for="source_lang" class="form-label"><strong>From:</strong></label>
+                </div>
+                <div class="col-1 d-flex flex-column justify-content-start">
+                    <!-- Empty space to maintain alignment -->
+                </div>
+                <div class="col">
+                    <label for="target_lang" class="form-label"><strong>To:</strong></label>
+                </div>
+            </div>
+
+            <!-- Languages and Swap Button -->
+            <div class="row g-3 mb-3">
+                <!-- Source language list -->
+                <div class="col">
                     <select id="source_lang" name="source_lang" class="form-select">
                         <option value="en">English</option>
                         <option value="es">Spanish</option>
                         <option value="uk">Ukrainian</option>
                     </select>
                 </div>
+
+                <!-- Swap button -->
+                <div class="col-1 d-flex flex-column justify-content-start">
+                    <button id="swap-btn" type="button" class="btn btn-primary mb-2">Swap</button>
+                </div>
+
+                <!-- Target language list -->
                 <div class="col">
-                    <label for="target_lang" class="form-label"><strong>To:</strong></label>
                     <select id="target_lang" name="target_lang" class="form-select">
                         <option value="uk">Ukrainian</option>
                         <option value="en">English</option>
@@ -43,6 +64,8 @@
                     </select>
                 </div>
             </div>
+            
+            <!-- Button -->
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Translate</button>
             </div>
