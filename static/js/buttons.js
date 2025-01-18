@@ -37,3 +37,16 @@ document.getElementById('copy-btn')?.addEventListener('click', () => {
     }
 });
 
+// Swap
+document.getElementById('swap-btn')?.addEventListener('click', () => {
+    const sourceLang = document.getElementById('source_lang');
+    const targetLang = document.getElementById('target_lang');
+
+    if (sourceLang && targetLang) {
+        // Swap values
+        [sourceLang.value, targetLang.value] = [targetLang.value, sourceLang.value];
+    } else {
+        console.error('One or both of the language elements are missing.');
+    }
+
+});
